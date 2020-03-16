@@ -1,0 +1,9 @@
+imports:
+- path: 06_worker-lb.py
+
+resources:
+- name: 'worker-lb' 
+  type: 06_worker-lb.py
+  properties:
+    infra_id: 'lab-98lsr' 
+    region: 'us-east1' 

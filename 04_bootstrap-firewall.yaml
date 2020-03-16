@@ -1,0 +1,13 @@
+imports:
+- path: 04_bootstrap_firewall.py
+
+resources:
+- name: cluster-bootstrap
+  type: 04_bootstrap_firewall.py
+  properties:
+    infra_id: 'lab-98lsr' 
+    region: 'us-east1' 
+    zone: 'us-east1-b' 
+
+    cluster_network: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/global/networks/network-vpc' 
+    default_network: 'https://www.googleapis.com/compute/v1/projects/ocp43-1/global/networks/default'

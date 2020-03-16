@@ -1,0 +1,13 @@
+imports:
+- path: 03_security.py
+
+resources:
+- name: cluster-security
+  type: 03_security.py
+  properties:
+    infra_id: 'lab-98lsr' 
+    region: 'us-east1' 
+    cluster_network: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/global/networks/network-vpc' 
+    network_cidr: '10.0.0.0/16' 
+    master_nat_ip: '34.74.94.243' 
+    worker_nat_ip: '34.74.154.166' 

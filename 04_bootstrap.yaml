@@ -1,0 +1,19 @@
+imports:
+- path: 04_bootstrap.py
+
+resources:
+- name: cluster-bootstrap
+  type: 04_bootstrap.py
+  properties:
+    infra_id: 'lab-98lsr' 
+    region: 'us-east1' 
+    zone: 'us-east1-b' 
+
+    cluster_network: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/global/networks/network-vpc' 
+    default_network: 'https://www.googleapis.com/compute/v1/projects/ocp43-1/global/networks/default'
+    control_subnet: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/regions/us-east1/subnetworks/ocp43-1-master' 
+    image: 'https://www.googleapis.com/compute/v1/projects/ocp43-1/global/images/lab-98lsr-rhcos-image' 
+    machine_type: 'n1-standard-4' 
+    root_volume_size: '128' 
+
+    bootstrap_ign: 'https://storage.googleapis.com/lab-98lsr-bootstrap-ignition/bootstrap.ign?x-goog-signature=bbf0aedad2e8a4ba0ccbb85320b1a2f5bdfb611f6c4009eaa0a409dbb6b9d70ba3d79c25145c6cac5c1ec115f1d005c53b677f2ea257d88997b60e1a87f188435c9c73cdd286005625dab51e19418d566173cf696e26c832a167f7b705aa157f8b9e9d03959a1a6b830c9476683a180919ba1c88e690679fe92e2fbc93659f9d20aafdadd350964b933ed4ea807cc0f83257e81a9ab0d4ab9397bea51d1d8e2902ad447c7b845ff0a31ecb589ba9603025520b974e8fd9c595410badc177c3ed794ec8e89770d704dfbb6305f53d24423f5731cb5389b99c35f9ee7aebd376d23660ed90f6e8c74c21931d4d46bb69038539f43d2064a53b71dc2980633f9162&x-goog-algorithm=GOOG4-RSA-SHA256&x-goog-credential=sa-ocp43-1%40ocp43-1.iam.gserviceaccount.com%2F20200316%2Fus%2Fstorage%2Fgoog4_request&x-goog-date=20200316T051539Z&x-goog-expires=86400&x-goog-signedheaders=host' 

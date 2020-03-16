@@ -1,0 +1,15 @@
+imports:
+- path: 01_nat-router.py
+
+resources:
+- name: cluster-nat-router
+  type: 01_nat-router.py
+  properties:
+    infra_id: 'lab-98lsr' 
+    region: 'us-east1' 
+
+    master-subnet: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/regions/us-east1/subnetworks/ocp43-1-master'
+    worker-subnet: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/regions/us-east1/subnetworks/ocp43-1-worker'
+    master_subnet_cidr: '10.1.0.0/19' 
+    worker_subnet_cidr: '10.1.32.0/19'
+    network: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/global/networks/network-vpc'

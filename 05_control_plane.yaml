@@ -1,0 +1,21 @@
+imports:
+- path: 05_control_plane.py
+
+resources:
+- name: cluster-control-plane
+  type: 05_control_plane.py
+  properties:
+    infra_id: 'lab-98lsr' 
+    region: 'us-east1' 
+    zones: 
+    - 'us-east1-b'
+    - 'us-east1-c'
+    - 'us-east1-d'
+
+    control_subnet: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/regions/us-east1/subnetworks/ocp43-1-master' 
+    image: 'https://www.googleapis.com/compute/v1/projects/ocp43-1/global/images/lab-98lsr-rhcos-image' 
+    machine_type: 'n1-standard-4' 
+    root_volume_size: '128'
+    service_account_email: 'lab-98lsr-m@ocp43-1.iam.gserviceaccount.com' 
+
+    ignition: '{"ignition":{"config":{"append":[{"source":"https://api-int.lab.ocp431.shahzobair.com:22623/config/master","verification":{}}]},"security":{"tls":{"certificateAuthorities":[{"source":"data:text/plain;charset=utf-8;base64,LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lJVHJPZmxlZ2tUZkV3RFFZSktvWklodmNOQVFFTEJRQXdKakVTTUJBR0ExVUUKQ3hNSmIzQmxibk5vYVdaME1SQXdEZ1lEVlFRREV3ZHliMjkwTFdOaE1CNFhEVEl3TURNeE5qQXpNRFkxTmxvWApEVE13TURNeE5EQXpNRFkxTmxvd0pqRVNNQkFHQTFVRUN4TUpiM0JsYm5Ob2FXWjBNUkF3RGdZRFZRUURFd2R5CmIyOTBMV05oTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUF3K1hhY0JTWHdmY1MKSVlBMWxNWXNwWkZSek5tekh5VG9VUG1iL1pZSy9sZW56RmdxK2pJQkpzUmQwMGNqTlZhc0FZdHdJbXEvR0gxTgpzNzNQT05iSVplZFROR1RFeFVMTHVONGRpSTlwQlVUbGtMQmJJdGlFUGIrZml6NFFBeHlZMTZxblpjYVUzVGRrCkFFbUNHOWNGWVNRSUN3UG9qUkc4eGJXaTViZ2FUQTBOTTlFUitkSzJFaUd5ZVJQYm8yY3JrVDRJcnpDcksvbDUKcitBZzB3TFhlaG1vTjJ1cHlqNU1XZzB1TG1TeHlzOXFuN3FYeHExSUhINlJQU3Y3bko1bnNGS0pudzRJWEt5egpramJXQlFmRmMxM0d4bS9GRHBxQ1N1WVhxc21DdEl4c25MM0s0eDd5TGxsWnlpWjludU9BcExRMG1JZG1HYVQvCktQTzE2ZlVxbndJREFRQUJvMEl3UURBT0JnTlZIUThCQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVXJiOXRCVnpVdnZSTEI1QklxNzdjS3IyUThrNHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUxtK3VjOFV0STJjQlFOVzU5OGVhS2wyd09kb3o5YlpRNlNkMWEwRHlWMzg0QzNZL3phY2V6YjkxZjdxCk01em9jWHV0N1dKc3R4cXVwUTdnRlVIaGlLUTZ3eWJiS2V6dHp2VE55Mzl2b2ZpRmRJb2IwMlMrdzNCaG5jdTgKQTJCZlRwd0w3RG9zV0Fja2hpWVdaOVdRVXdQSk1CTDdEUmZSMXduTjVUNGRKYUlPd3dGNnJrYmErM3djaWpvQQpxS1pLU2E4ZjBUelBzTGxFbC81SEVKRHZjWVhteVhveDByTVlyM1V0cmVyRWljV1NPK3lrZW9obVBLRXlwY1dHCjgyeGdLUityUEdpMHJpMHhiejAxTllLRFVTVVZXTjdyYnNxbnZMOVpOZFdIbFJYWmdTeWRnaXBDSFQ5elltQVUKN202azQwTU9qTm9EeG9WV2kzcHgvaU9JYW9zPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==","verification":{}}]}},"timeouts":{},"version":"2.2.0"},"networkd":{},"passwd":{},"storage":{},"systemd":{}}' 

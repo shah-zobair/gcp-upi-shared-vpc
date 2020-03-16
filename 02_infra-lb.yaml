@@ -1,0 +1,12 @@
+imports:
+- path: 02_infra-lb.py
+
+resources:
+- name: cluster-infra
+  type: 02_infra-lb.py
+  properties:
+    infra_id: 'lab-98lsr' 
+    region: 'us-east1' 
+
+    cluster_domain: 'lab.ocp431.shahzobair.com' 
+    cluster_network: 'https://www.googleapis.com/compute/v1/projects/network-vpc-269503/global/networks/network-vpc' 
